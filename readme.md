@@ -9,28 +9,26 @@ A Trust & Safety specific analyst copilot where analysts ask questions in plain 
 
 ## 🎯 Problem
 
-T&S analysts spend hours writing SQL to investigate safety issues. This copilot lets them ask questions in plain English, get instant results with auto-generated charts, and receive recommended actions — all without touching SQL.
+T&S analysts spend hours writing SQL to investigate safety issues. This copilot lets them ask questions in plain English, get instant results with auto generated charts, and receive recommended actions, all without touching SQL.
 
 ---
+
 
 ## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
-    A[Analyst Question] --> B[Claude API - SQL Generation]
+    A[Analyst Question] --> B[Claude API: SQL Generation]
     B --> C{Guardrails Check}
     C -->|Pass| D[DuckDB Query Execution]
-    C -->|Fail| E[Blocked - Security]
+    C -->|Fail| E[Blocked: Security]
     D -->|Success| F[Chart Auto-Detection]
     D -->|Error| G[Retry with Error Context]
     G --> B
-    F --> H[Plotly Chart]
-    F --> I[Data Table]
-    H --> J[Claude API - Insight + Action]
-    I --> J
+    F --> H[Plotly Chart + Data Table]
+    H --> J[Claude API: Insight + Action]
     J --> K[Result to Analyst]
 ```
-
 ---
 
 ## 📸 Screenshots
@@ -54,7 +52,7 @@ flowchart TD
 ## ⚡ Key Features
 
 ### 1. Natural Language to SQL
-Type any question about platform safety data. Claude generates DuckDB SQL using exact column names from the schema — no hallucinated columns, no wrong table names.
+Type any question about platform safety data. Claude generates DuckDB SQL using exact column names from the schema, no hallucinated columns, no wrong table names.
 
 ### 2. Agentic Retry Loop
 If SQL fails, Claude receives the error message + original question + failed SQL and fixes it automatically. Up to 2 retries before failing gracefully.
@@ -173,6 +171,10 @@ streamlit run app.py
 ---
 
 ## 📁 Project Structure
+
+## 📁 Project Structure
+
+```text
 ts-analyst-copilot/
 ├── data/
 │   ├── flags.csv        # 41,935 flag records
@@ -181,10 +183,11 @@ ts-analyst-copilot/
 ├── assets/              # Screenshots
 ├── database.py          # DuckDB connection + schema + query runner
 ├── app.py               # Streamlit app + Claude integration
-├── .env                 # API key
+├── .env                 # API key (never committed)
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
 ---
 
