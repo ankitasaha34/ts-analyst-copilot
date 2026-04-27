@@ -172,8 +172,6 @@ streamlit run app.py
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 ```text
 ts-analyst-copilot/
 ├── data/
