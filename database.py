@@ -2,7 +2,7 @@ import duckdb
 import os
 
 # Paths to CSV files
-BASE_PATH = r"C:\Users\91986\OneDrive\Desktop\UIUC\Projects\ts-analyst-copilot\data"
+BASE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 FLAGS_PATH = os.path.join(BASE_PATH, "flags.csv")
 REVIEWERS_PATH = os.path.join(BASE_PATH, "reviewers.csv")
