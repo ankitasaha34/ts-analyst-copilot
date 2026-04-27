@@ -1,0 +1,7 @@
+anthropic
+pandas
+numpy
+streamlit
+plotly
+python-dotenv
+duckdb
