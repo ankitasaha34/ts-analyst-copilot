@@ -1,0 +1,6 @@
+attack_id,start_date,duration_days,category,num_accounts,pattern,severity,end_date
+ATK001,2024-01-15,2,harassment,45,Coordinated harassment targeting female journalists,high,2024-01-16
+ATK002,2024-01-28,1,hate_speech,30,Hate speech spike around political event,critical,2024-01-28
+ATK003,2024-02-10,3,spam,120,Spam campaign promoting crypto scam links,medium,2024-02-12
+ATK004,2024-02-25,2,harassment,60,Targeted harassment campaign against activist group,critical,2024-02-26
+ATK005,2024-03-18,1,fraud,35,Fraudulent account network promoting fake giveaways,high,2024-03-18
